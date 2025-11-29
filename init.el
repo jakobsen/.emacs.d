@@ -1,3 +1,15 @@
+;; Turn off mouse interface early in startup to avoid momentary display
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+
+;; Disable spash screen
+(setq inhibit-startup-message t)
+
+;; Make it look pretty
+(set-frame-font "Maple Mono NF 15" nil t)
+(load-theme 'catppuccin :no-confirm)
+
 ;; use better-defaults
 (add-to-list 'load-path "~/.emacs.d/better-defaults")
 (require 'better-defaults)
@@ -6,10 +18,6 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 (require 'package)
-
-;; Make it look pretty
-(set-frame-font "Maple Mono NF 15" nil t)
-(load-theme 'catppuccin :no-confirm)
 
 ;; Add the option to create a new line from the middle of a line
 (defun new-line-from-middle-of-line ()
