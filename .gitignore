@@ -1,0 +1,12 @@
+auto-save-list/
+backups/
+history
+ido.last
+places
+transient/
+elpa/
+*~
+\#*\#
+.#*
+*.elc
+tutorial/
