@@ -24,6 +24,9 @@
 (package-initialize)
 (require 'package)
 
+;; use aspell for spell checking
+(setq ispell-program-name "/opt/homebrew/bin/aspell")
+
 ;; Add the option to create a new line from the middle of a line
 (defun new-line-from-middle-of-line ()
   (interactive)
