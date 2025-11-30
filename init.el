@@ -10,6 +10,11 @@
 (set-frame-font "Maple Mono NF 15" nil t)
 (load-theme 'catppuccin :no-confirm)
 
+;; No beeping please
+(setq ring-bell-function (lambda ()
+                           (invert-face 'mode-line)
+                           (run-with-timer 0.05 nil 'invert-face 'mode-line)))
+
 ;; use better-defaults
 (add-to-list 'load-path "~/.emacs.d/better-defaults")
 (require 'better-defaults)
